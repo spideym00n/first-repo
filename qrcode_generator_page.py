@@ -23,4 +23,4 @@ def generate_qrcode_page():
                  caption="Here you go!"
                  )
 
-        st.markdown("@spideymoon")
+        st.markdown("@spideym00n")
