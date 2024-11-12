@@ -12,7 +12,7 @@ def generate_qrcode_page():
     dark_colour = st.color_picker("Pick a colour for the dark squares")
 
     def generate_qrcode(url, dark_colour):
-        qrcode = segno.make_qr(url, dark_colour)
+        qrcode = segno.make_qr(url)
         qrcode.to_pil(scale=10,
                       dark=dark_colour).save("qrcode_streamlit.png")
 
