@@ -9,11 +9,9 @@ def generate_qrcode_page():
 
     st.title("QR Code Generator")
     url = st.text_input("Please enter the data you want to encode:")
-    dark_colour = st.color_picker("Pick a colour for the dark squares", "#8569a8")
+    dark_colour = st.color_picker("Pick a colour for the dark squares")
 
-    # thanks Aneeka for suggesting we could create a button
-    button = st.button("Click here to generate")
-    def generate_qrcode(url):
+    def generate_qrcode(url, dark_colour):
         qrcode = segno.make_qr(url, dark_colour)
         qrcode.to_pil(scale=10,
                       dark=dark_colour).save("qrcode_streamlit.png")
@@ -21,7 +19,7 @@ def generate_qrcode_page():
     if url:
         with st.spinner("Generate QR Code"):
             time.sleep(3)
-        generate_qrcode(url)
+        generate_qrcode(url, dark_colour)
         st.image("qrcode_streamlit.png",
                  caption="Here you go!"
                  )
