@@ -13,13 +13,13 @@ def generate_qrcode_page():
 
     def generate_qrcode(url):
         qrcode = segno.make_qr(url)
-        qrcode.to_pil(scale=10).save("images/qrcode_streamlit.png")
+        qrcode.to_pil(scale=10).save("qrcode_streamlit.png")
 
     if url:
         with st.spinner("Generate QR Code"):
             time.sleep(3)
         generate_qrcode(url)
-        st.image("images/qrcode_streamlit.png",
+        st.image("qrcode_streamlit.png",
                  caption="Here you go!"
                  )
 
