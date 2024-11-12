@@ -10,6 +10,10 @@ def generate_qrcode_page():
     st.title("QR Code Generator")
 
     url = st.text_input("Please enter the data you want to encode:")
+    dark_colour = st.color_picker("Pick a colour for the dark squares", "#8569a8")
+
+    # thanks Aneeka for suggesting we could create a button
+    button = st.button("Click here to generate")
 
     def generate_qrcode(url):
         qrcode = segno.make_qr(url)
